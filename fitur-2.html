@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Fitur 2</h1>
+        <p>Ini adalah fitur 2</p>
+        <button onclick="toggleFeature()">Toggle Feature</button>
+        <div id="feature2" style="display: none;">
+            <h2>Fitur 2</h2>
+            <p>Fitur 2 ini dapat diakses melalui tombol di atas</p>
+    
+            <button onclick="toggleFeature()">Tutup Fitur</button>
+            <button onclick="changeFeatureContent()">Ubah Konten</button>
+            <button onclick="changeFeatureColor()">Ubah Warna</button>
+            <button onclick="changeFeaturePosition()">Ubah Posisi</button>
+        </div>
+        
+        <script>
+            let feature2 = document.getElementById('feature2');
+            let isFeatureVisible = false;
+            let isFeatureContentChanged = false;
+            let isFeatureColorChanged = false;
+            let isFeaturePositionChanged = false;
+            
+            function toggleFeature() {
+                isFeatureVisible =!isFeatureVisible;
+                feature2.style.display = isFeatureVisible? 'block' : 'none';
+            }
+
+            function changeFeatureContent() {
+                isFeatureContentChanged =!isFeatureContentChanged;
+                feature2.innerHTML = isFeatureContentChanged? 'Fitur 2 telah diubah' : 'Fitur 2';
+            }
+            
+            function changeFeatureColor() {
+                isFeatureColorChanged =!isFeatureColorChanged;
+                feature2.style.backgroundColor = isFeatureColorChanged? 'green' : 'white';
+            }
+
+            function changeFeaturePosition() {
+                isFeaturePositionChanged =!isFeaturePositionChanged;
+                feature2.style.position = isFeaturePositionChanged? 'fixed' : 'static';
+            }
+            
+        </script>
+    </div>
+</body>
+</html>
